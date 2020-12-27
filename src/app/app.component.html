@@ -1,0 +1,23 @@
+<div style="display: flex">
+  <span style="align-self: center">Add new todo:</span>
+  <input type="text" #todoText>
+  <button mat-button color="primary" (click)="addTodo(todoText.value)">
+    <div style="display: flex;">
+      <span>Add</span>&nbsp;
+      <mat-progress-spinner style="align-self: center" color="primary" mode="indeterminate" [diameter]="20" *ngIf="todoState.addTodoLoading$ | async"></mat-progress-spinner>
+    </div>
+  </button>
+</div>
+
+<input type="text" #search placeholder="Search" style="margin-top: 10px; margin-bottom: 10px;">
+
+<ng-container *ngIf="todosFiltered | async as todos">
+  <ol>
+    <li *ngFor="let todoItem of todos" [ngClass]="{'strikethrough': todoItem.done}" (click)="toggleStrike(todoItem)">
+      {{ todoItem.task }}
+    </li>
+  </ol>
+</ng-container>
+
+<mat-progress-spinner color="primary" mode="indeterminate" [diameter]="200" *ngIf="todoState.loading$ | async">
+</mat-progress-spinner>

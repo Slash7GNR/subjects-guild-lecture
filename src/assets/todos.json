@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "task": "Lecture about Kobura State Management\uD83D\uDCAA",
+    "done": false
+  },
+  {
+    "id": "2",
+    "task": "Run 10KM in 50 Minutes",
+    "done": false
+  },
+  {
+    "id": "3",
+    "task": "Go with Kobura to GA",
+    "done": true
+  }
+]
